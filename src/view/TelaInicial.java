@@ -131,6 +131,17 @@ public class TelaInicial extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnVendaDireta, -120, SpringLayout.EAST, contentPane);
 		btnVendaDireta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+					JOptionPane.showMessageDialog(null, "Compra sem fidelização!");
+					TelaVendaDireta telavendadireta = new TelaVendaDireta();
+					telavendadireta.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		            telavendadireta.setTitle("Pedido de Venda");
+		            telavendadireta.setLocationRelativeTo(null);
+		            telavendadireta.setResizable(false);
+		            telavendadireta.setVisible(true);
+				
+				
+				
 			}
 		});
 		contentPane.add(btnVendaDireta);
