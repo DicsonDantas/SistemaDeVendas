@@ -52,13 +52,13 @@ public class ItemDAO {
 		// FECHAR TRANSAÇÃO
 		this.manager.getTransaction().commit();
 	}
-/*
-	public Cliente obter(Integer codigo) {
+
+	public Item obter(Integer id) {
 		// CARREGAR O PRODUTO PELA CHAVE PRIMÁRIA
-		Cliente retorno = this.manager.find(Cliente.class, codigo);
+		Item retorno = this.manager.find(Item.class, id);
 		return retorno;
 	}
-
+/*
 	public List<Cliente> obterTodos() {
 		List<Cliente> retorno = new ArrayList<Cliente>();
 		return retorno;	

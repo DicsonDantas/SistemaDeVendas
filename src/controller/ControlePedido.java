@@ -40,6 +40,14 @@ public class ControlePedido {
 			 System.out.println(ped.getValorTotal());
 		
 	 }
-	*/					
+	*/			
+	
+	
+	public float calcularValorTotal(float x, int y){
+		
+		float soma = (float) x * y; 
+		return soma;
+		
+	}
 }
 	

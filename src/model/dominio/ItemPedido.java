@@ -1,5 +1,6 @@
 package model.dominio;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,10 +14,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="tab_itens_pedido")
+
+
+@Entity
+@Table(name="tab_itens_pedido")
 public class ItemPedido {
-	/* @Id
+	
+	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@SequenceGenerator(name="NUMERO_ITEM_PEDIDO", sequenceName="SEQ_NUMERO_ITEM_PEDIDO", allocationSize=1)
 	@Column(name="numero_item_pedido")
@@ -34,6 +38,10 @@ public class ItemPedido {
 	@Basic(fetch=FetchType.LAZY)
 	private Pedido pedido;
 
+	@ManyToOne
+	@JoinColumn(name="fk_item")
+	private Item item;
+	
 	
 	public ItemPedido(Integer quantidade, Float precoUnidade) {
 		super();
@@ -61,11 +69,23 @@ public class ItemPedido {
 		this.pedido = pedido;
 	}
 	
+	public Integer getNumeroItemPedido() {
+		return numeroItemPedido;
+	}
+	public void setNumeroItemPedido(Integer numeroItemPedido) {
+		this.numeroItemPedido = numeroItemPedido;
+	}
+	public Item getItem() {
+		return item;
+	}
+	public void setItem(Item item) {
+		this.item = item;
+	}
 	public Pedido getPedido() {
 		return pedido;
 	}
 	
 
-       */ 
+       
 }
 	
