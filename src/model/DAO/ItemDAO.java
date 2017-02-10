@@ -1,10 +1,13 @@
 package model.DAO;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
 import model.dominio.Item;
+
 
 public class ItemDAO {
 
@@ -58,13 +61,11 @@ public class ItemDAO {
 		Item retorno = this.manager.find(Item.class, id);
 		return retorno;
 	}
-/*
-	public List<Cliente> obterTodos() {
-		List<Cliente> retorno = new ArrayList<Cliente>();
-		return retorno;	
-
-	}
 	
-*/
+	public List<Item> obterTodos() {
+		List<Item> retorno = new ArrayList<Item>();
+		return retorno;
+	
 
+}
 }

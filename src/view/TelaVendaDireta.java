@@ -96,6 +96,11 @@ public class TelaVendaDireta extends JFrame {
 		textFieldQuantidade.setColumns(10);
 
 		
+		JLabel lblNomeProd = new JLabel("");
+		lblNomeProd.setFont(new Font("Georgia", Font.BOLD, 14));
+		lblNomeProd.setBounds(6, 355, 242, 29);
+		contentPane.add(lblNomeProd);
+		
 		/*TEXTFIELD ONDE É INSERIDO O ID E CARREGADO DO BD O VALORUNITARIO, 
 		 * O DISPARO DO TEXTO EXIBIDO NA TELA JÁ É AUTOMÁTICO AO SER INSERIDO O ID*/
 	
@@ -113,6 +118,8 @@ public class TelaVendaDireta extends JFrame {
 						itemdao.obter(idprod);
 						item = itemdao.obter(idprod);
 						textFieldPrecoUnit.setText(String.valueOf(item.getPreco()));
+						lblNomeProd.setText("Produto : " + item.getNome());
+						
 
 					} catch (Exception e2) {
 						e2.getMessage();
@@ -149,11 +156,17 @@ public class TelaVendaDireta extends JFrame {
 			public void actionPerformed(ActionEvent e) {
                 float valorUnit = (float) (Double.parseDouble(textFieldPrecoUnit.getText())); 
                 int  qtd = (int) (Double.parseDouble(textFieldQuantidade.getText()));
+                float desconto = (float) (Double.parseDouble(textFieldDesconto.getText()));
                 
-				float valorTotal = (float) valorUnit * qtd; 
-                
+             
+				float valorTotal = valorUnit * qtd; 
+				valorTotal -= desconto; 
 				lblValorTotal.setText((String.valueOf(valorTotal)));
-
+				
+                
+				
+ 
+				
 			}
 		});
 
@@ -180,6 +193,8 @@ public class TelaVendaDireta extends JFrame {
 		JLabel lblFCancelar = new JLabel("F6 - Cancelar Cupom");
 		lblFCancelar.setBounds(465, 102, 100, 14);
 		contentPane.add(lblFCancelar);
+		
+
 
 	}
 }
